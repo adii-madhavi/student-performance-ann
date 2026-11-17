@@ -1,0 +1,133 @@
+{
+  "dataset": {
+    "rows": 15000,
+    "features": [
+      "age",
+      "attendance_pct",
+      "study_hours_per_week",
+      "previous_score",
+      "assignment_completion_pct",
+      "internal_assessment_score",
+      "participation_score",
+      "sleep_hours_per_day",
+      "extracurricular_hours_per_week",
+      "failed_subjects"
+    ],
+    "target": "performance_category",
+    "class_counts": {
+      "Low": 4950,
+      "Medium": 5100,
+      "High": 4950
+    },
+    "split": {
+      "train": 10500,
+      "val": 2250,
+      "test": 2250
+    }
+  },
+  "architecture_search": [
+    {
+      "hidden": "(16,)",
+      "params": 227.0,
+      "epochs": 30.0,
+      "val_loss": 0.6645961403846741,
+      "val_acc": 0.6831111311912537
+    },
+    {
+      "hidden": "(32, 16)",
+      "params": 931.0,
+      "epochs": 31.0,
+      "val_loss": 0.6647325158119202,
+      "val_acc": 0.6813333630561829
+    },
+    {
+      "hidden": "(64, 32)",
+      "params": 2883.0,
+      "epochs": 16.0,
+      "val_loss": 0.6681944727897644,
+      "val_acc": 0.6826666593551636
+    },
+    {
+      "hidden": "(128, 64, 32)",
+      "params": 11843.0,
+      "epochs": 17.0,
+      "val_loss": 0.6653976440429688,
+      "val_acc": 0.6831111311912537
+    }
+  ],
+  "chosen_architecture": [
+    32,
+    16
+  ],
+  "params": 931,
+  "epochs_run": 31,
+  "baseline": {
+    "accuracy": 0.7066666666666667,
+    "precision_macro": 0.7075559930970394,
+    "recall_macro": 0.7080266665977474,
+    "f1_macro": 0.7074747634784219
+  },
+  "ann": {
+    "accuracy": 0.7013333333333334,
+    "precision_macro": 0.7063846516253882,
+    "recall_macro": 0.702450973081333,
+    "f1_macro": 0.7037931198747659
+  },
+  "ann_per_class": {
+    "Low": {
+      "precision": 0.7542043984476067,
+      "recall": 0.784656796769852,
+      "f1": 0.7691292875989446,
+      "support": 743
+    },
+    "Medium": {
+      "precision": 0.5672955974842767,
+      "recall": 0.5895424836601307,
+      "f1": 0.5782051282051283,
+      "support": 765
+    },
+    "High": {
+      "precision": 0.7976539589442815,
+      "recall": 0.7331536388140162,
+      "f1": 0.7640449438202247,
+      "support": 742
+    }
+  },
+  "confusion_matrix_ann": [
+    [
+      583,
+      152,
+      8
+    ],
+    [
+      184,
+      451,
+      130
+    ],
+    [
+      6,
+      192,
+      544
+    ]
+  ],
+  "confusion_matrix_baseline": [
+    [
+      590,
+      145,
+      8
+    ],
+    [
+      187,
+      437,
+      141
+    ],
+    [
+      8,
+      171,
+      563
+    ]
+  ],
+  "mean_confidence_correct": 0.7376081347465515,
+  "mean_confidence_wrong": 0.593658983707428,
+  "adjacent_errors_share": 0.9791666666666666
+}

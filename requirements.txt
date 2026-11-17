@@ -1,0 +1,13 @@
+tensorflow>=2.16
+keras>=3
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+joblib
+fastapi
+uvicorn
+httpx
+streamlit
+jupyter
